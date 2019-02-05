@@ -1,6 +1,6 @@
 $white: #ffffff;
 $ulGray: #eeeeee;
-$slGray: #aaaaaa;
+$slGray: #fafafa;
 $lGray: #999999;
 $blueGray: #434a54;
 $lBlue: #38aef0;
@@ -123,4 +123,36 @@ a {
   border-radius: 2px;
   padding: 0 20px;
   line-height: 40px;
+}
+
+.mainView__chatSpace {
+  background-color: $slGray;
+  padding: 46px 40px;
+}
+
+.chatSpace__chat {
+  padding-bottom: 40px;
+}
+
+.chat__firstLine {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.chat__userName {
+  font-size: 16px;
+  font-weight: bold;
+  color: $blueGray;
+  margin-right: 10px;
+}
+
+.chat__sendDate {
+  font-size: 12px;
+  color: $lGray;
+}
+
+.chat__message {
+  font-size: 14px;
+  color: $blueGray;
+  margin-bottom: 10px;
 }
