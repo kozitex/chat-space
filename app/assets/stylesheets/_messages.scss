@@ -1,0 +1,76 @@
+$white: #ffffff;
+$ulGray: #eeeeee;
+$slGray: #aaaaaa;
+$lGray: #999999;
+$blueGray: #434a54;
+$lBlue: #38aef0;
+$dGray: #333333;
+$dBlueGray: #2f3e51;
+$dBlue: #253141;
+
+.infoBar {
+  width: 100%;
+  color: $white;
+  background-color: $lBlue;
+  text-align: center;
+  display: none;
+}
+
+.sideBar {
+  color: $white;
+  float: left;
+  width: 300px;
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.sideBar__header {
+  background-color: $dBlue;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.sideBar__userInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.userInfo__userName {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.userInfo__menu {
+  display: flex;
+  li {
+    margin-left: 10px;
+  }
+}
+
+.sideBar__groupSelector {
+  background-color: $dBlueGray;
+  height: calc(100vh - 100px);
+}
+
+.groupSelector__groups {
+  padding: 20px 20px 0;
+}
+
+.groupSelector__group {
+  padding-bottom: 40px;
+}
+
+.groupSelector__groupName {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.groupSelector__latestChat {
+  font-size: 11px;
+}
+
