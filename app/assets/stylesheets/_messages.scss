@@ -8,6 +8,14 @@ $dGray: #333333;
 $dBlueGray: #2f3e51;
 $dBlue: #253141;
 
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  }
+
 .infoBar {
   width: 100%;
   color: $white;
@@ -22,7 +30,6 @@ $dBlue: #253141;
   width: 300px;
   a {
     color: $white;
-    text-decoration: none;
   }
 }
 
@@ -74,3 +81,46 @@ $dBlue: #253141;
   font-size: 11px;
 }
 
+.mainView {
+  width: calc(100vw - 300px);
+  float: right;
+}
+
+.mainView__header {
+  background-color: $white;
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $ulGray;
+}
+
+.header__groupInfo {
+  margin-top: 35px;
+}
+
+.groupInfo__groupName {
+  font-size: 20px;
+  color: $dGray;
+  margin-bottom: 15px;
+}
+
+.groupInfo__members {
+  font-size: 12px;
+  color: $lGray;
+  display: flex;
+  justify-content: space-between;
+  .groupInfo__member {
+    margin-right: 5px;
+  }
+}
+
+.header__editButton {
+  color: $lBlue;
+  margin-top: 28px;
+  height: 40px;
+  border: 1px solid $lBlue;
+  border-radius: 2px;
+  padding: 0 20px;
+  line-height: 40px;
+}

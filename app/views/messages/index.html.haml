@@ -8,10 +8,10 @@
       .sideBar__userInfo
         %p.userInfo__userName hoge999
         %ul.userInfo__menu
-          %li.userInfo__editUserInfo
+          %li.userInfo__editUserInfo<
             = link_to root_path, title: 'ユーザー情報を編集します。' do
               %i.fas.fa-user-edit
-          %li.userInfo__createGroup
+          %li.userInfo__createGroup<
             = link_to root_path, title: 'チャットグループを新規作成します。' do
               %i.fas.fa-plus-square
     .sideBar__groupSelector
@@ -27,6 +27,14 @@
 
 
   .mainView
-    .mainView__groupInfo
+    .mainView__header
+      .header__groupInfo
+        %p.groupInfo__groupName trial
+        %ul.groupInfo__members
+          Member：
+          %li.groupInfo__member< hoge999
+          %li.groupInfo__member< 野生爆弾
+      %a{href:'#'}
+        .header__editButton Edit
     .mainView__chatSpace
     .mainView__chatSender
