@@ -4,10 +4,10 @@
     .sideBar__userInfo
       %p.userInfo__userName hoge999
       %ul.userInfo__menu
-        %li.userInfo__editUserInfo<
+        %li<
           = link_to root_path, title: 'ユーザー情報を編集します。' do
             %i.fas.fa-user-edit
-        %li.userInfo__createGroup<
+        %li<
           = link_to root_path, title: 'チャットグループを新規作成します。' do
             %i.fas.fa-plus-square
   .sideBar__groupSelector
@@ -28,7 +28,7 @@
   .mainView__chatSender
     %form.chatSender__form
       .form__input
-        %input.form__input.form__inputBox{placeholder: 'type a message'}
+        %input.form__inputBox{placeholder: 'type a message'}
         %label.form__label
           %span.form__fileSelectButton
             %i.fas.fa-images{title: 'アップロードする画像を選択してください。'}
