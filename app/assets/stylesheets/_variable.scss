@@ -1,0 +1,15 @@
+$white: #ffffff;
+$hlGray: #fafafa;
+$ulGray: #eeeeee;
+$slGray: #dddddd;
+$lGray: #999999;
+$blueGray: #434a54;
+$lBlue: #38aef0;
+$dGray: #333333;
+$dBlueGray: #2f3e51;
+$dBlue: #253141;
+
+@mixin evenAllo() {
+  display: flex;
+  justify-content: space-between;
+}
