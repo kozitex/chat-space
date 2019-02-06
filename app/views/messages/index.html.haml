@@ -1,11 +1,11 @@
-.infoBar チャットグループが作成されました。
 .sideBar
   .sideBar__header
     .sideBar__userInfo
-      %p.userInfo__userName hoge999
+      %p.userInfo__userName
+        = current_user.name
       %ul.userInfo__menu
         %li<
-          = link_to root_path, title: 'ユーザー情報を編集します。' do
+          = link_to edit_user_path(current_user), title: 'ユーザー情報を編集します。' do
             %i.fas.fa-user-edit
         %li<
           = link_to root_path, title: 'チャットグループを新規作成します。' do
