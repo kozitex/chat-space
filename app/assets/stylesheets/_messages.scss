@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  }
+
+.infoBar {
+  width: 100%;
+  color: $white;
+  background-color: $lBlue;
+  text-align: center;
+  display: none;
+}
+
+.sideBar {
+  color: $white;
+  float: left;
+  width: 300px;
+  a {
+    color: $white;
+  }
+  .sideBar__header {
+    background-color: $dBlue;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    .sideBar__userInfo {
+      @include evenAllo();
+      width: 100%;
+      padding: 0 20px;
+      .userInfo__userName {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .userInfo__menu {
+        display: flex;
+        li {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .sideBar__groupSelector {
+    background-color: $dBlueGray;
+    height: calc(100vh - 100px);
+    .groupSelector__groups {
+      padding: 20px 20px 0;
+      .groupSelector__group {
+        padding-bottom: 40px;
+        .groupSelector__groupName {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        .groupSelector__latestChat {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+
+.mainView {
+  width: calc(100vw - 300px);
+  float: right;
+  .mainView__header {
+    background-color: $white;
+    height: 100px;
+    padding: 0 40px;
+    @include evenAllo();
+    border-bottom: 1px solid $ulGray;
+    .header__groupInfo {
+      margin-top: 35px;
+      .groupInfo__groupName {
+        font-size: 20px;
+        color: $dGray;
+        margin-bottom: 15px;
+      }
+      .groupInfo__members {
+        font-size: 12px;
+        color: $lGray;
+        @include evenAllo();
+        .groupInfo__member {
+          margin-right: 5px;
+        }
+      }
+    }
+    .header__editButton {
+      color: $lBlue;
+      margin-top: 28px;
+      height: 40px;
+      border: 1px solid $lBlue;
+      border-radius: 2px;
+      padding: 0 20px;
+      line-height: 40px;
+    }
+  }
+  .mainView__chatSpace {
+    background-color: $hlGray;
+    padding: 46px 40px;
+    height: calc(100vh - 190px);
+    overflow: scroll;
+    .chatSpace__chat {
+      padding-bottom: 40px;
+      .chat__firstLine {
+        display: flex;
+        margin-bottom: 10px;
+        .chat__userName {
+          font-size: 16px;
+          font-weight: bold;
+          color: $blueGray;
+          margin-right: 10px;
+        }
+        .chat__sendDate {
+          font-size: 12px;
+          color: $lGray;
+        }
+      }
+      .chat__message {
+        font-size: 14px;
+        color: $blueGray;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .mainView__chatSender {
+    background-color: $slGray;
+    padding: 20px 40px;
+    .chatSender__form {
+      display: flex;
+      .form__input {
+        width: 100%;
+        position: relative;
+        .form__inputBox {
+          border: none;
+          padding: 0 40px 0 10px;
+          height: 50px;
+          width: 100%;
+        }
+        .form__label {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          .form__fileSelectButton {
+            font-size: 21px;
+          }
+          .form__fileSelectButton:hover {
+            opacity: 0.5;
+            cursor: pointer;
+          }
+          .form__file {
+            display: none;
+          }
+        }
+      }
+      .form__submitButton {
+        color: $white;
+        background-color: $lBlue;
+        width: 100px;
+        height: 50px;
+        border: 1px solid $slGray;
+        border-radius: 2px;
+        padding: 0 30px;
+        margin-left: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}
