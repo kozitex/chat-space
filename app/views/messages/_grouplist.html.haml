@@ -1,8 +1,7 @@
-%a{href:'#'}
-  .groupSelector__group
-    %p.groupSelector__groupName test
-    %p.groupSelector__latestChat f
-%a{href:'#'}
-  .groupSelector__group
-    %p.groupSelector__groupName test2
-    %p.groupSelector__latestChat まだメッセージがありません
+- current_user.groups.each do |group|
+  = link_to group_messages_path(group) do
+    .groupSelector__group
+      %p.groupSelector__groupName
+        = group.name
+      %p.groupSelector__latestChat
+        まだメッセージがありません
