@@ -8,7 +8,7 @@
           = link_to edit_user_path(current_user), title: 'ユーザー情報を編集します。' do
             %i.fas.fa-user-edit
         %li<
-          = link_to root_path, title: 'チャットグループを新規作成します。' do
+          = link_to new_group_path, title: 'チャットグループを新規作成します。' do
             %i.fas.fa-plus-square
   .sideBar__groupSelector
     .groupSelector__groups
@@ -21,7 +21,7 @@
         Member：
         %li.groupInfo__member< hoge999
         %li.groupInfo__member< 野生爆弾
-    %a{href:'#'}
+    = link_to edit_group_path(1), title: 'チャットグループを編集します。' do
       .header__editButton Edit
   .mainView__chatSpace
     = render partial: 'chat'

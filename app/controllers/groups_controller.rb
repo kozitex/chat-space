@@ -1,10 +1,10 @@
 class GroupsController < ApplicationController
   def new
-    @post = Post.new
+    @group = Group.new
   end
 
   def create
-    Post.create(group_params)
+    Group.create(group_params)
   end
 
   def edit
