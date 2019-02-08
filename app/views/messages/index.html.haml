@@ -16,12 +16,14 @@
 .mainView
   .mainView__header
     .header__groupInfo
-      %p.groupInfo__groupName trial
+      %p.groupInfo__groupName
+        = @current_group.name
       %ul.groupInfo__members
         Member：
-        %li.groupInfo__member< hoge999
-        %li.groupInfo__member< 野生爆弾
-    = link_to edit_group_path(1), title: 'チャットグループを編集します。' do
+        - @current_group.users.each do |user|
+          %li.groupInfo__member<
+            = user.name
+    = link_to edit_group_path(@current_group.id), title: 'チャットグループを編集します。' do
       .header__editButton Edit
   .mainView__chatSpace
     = render partial: 'chat'
