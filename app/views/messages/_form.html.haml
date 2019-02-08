@@ -1,0 +1,10 @@
+= form_for [group, message], html: { class: 'chatSender__form' } do |f|
+  .form__input
+    = f.text_field :body, class: 'form__inputBox', placeholder: 'type a message'
+    = image_tag message.image.url if message.image?
+    = f.label :image, class: 'form__label' do
+      %span.form__fileSelectButton
+        %i.fas.fa-images{title: 'アップロードする画像を選択してください。'}
+      = f.file_field :image, class: 'form__file'
+      = f.hidden_field :image_cache
+  = f.submit 'Send', class: 'form__submitButton'

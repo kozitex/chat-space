@@ -28,12 +28,4 @@
   .mainView__chatSpace
     = render partial: 'chat'
   .mainView__chatSender
-    %form.chatSender__form
-      .form__input
-        %input.form__inputBox{placeholder: 'type a message'}
-        %label.form__label
-          %span.form__fileSelectButton
-            %i.fas.fa-images{title: 'アップロードする画像を選択してください。'}
-          %input.form__file{type: 'file'}
-      %input.form__submitButton{type: 'submit', value: 'Send'}
-
+    = render 'form', { message: @message, group: @current_group }
