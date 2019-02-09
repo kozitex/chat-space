@@ -1,7 +1,6 @@
-- current_user.groups.each do |group|
-  = link_to group_messages_path(group) do
-    .groupSelector__group
-      %p.groupSelector__groupName
-        = group.name
-      %p.groupSelector__latestChat
-        まだメッセージがありません
+= link_to group_messages_path(group) do
+  .groupSelector__group
+    %p.groupSelector__groupName
+      = group.name
+    %p.groupSelector__latestChat
+      = group.show_latest_message

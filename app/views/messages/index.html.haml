@@ -12,7 +12,7 @@
             %i.fas.fa-plus-square
   .sideBar__groupSelector
     .groupSelector__groups
-      = render partial: 'grouplist'
+      = render partial: 'grouplist', collection: current_user.groups, as: :group
 .mainView
   .mainView__header
     .header__groupInfo
@@ -26,6 +26,6 @@
     = link_to edit_group_path(@current_group.id), title: 'チャットグループを編集します。' do
       .header__editButton Edit
   .mainView__chatSpace
-    = render partial: 'chat'
+    = render partial: 'chat', collection: @messages, as: :message
   .mainView__chatSender
     = render 'form', { message: @message, group: @current_group }

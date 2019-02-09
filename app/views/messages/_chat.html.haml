@@ -1,15 +1,10 @@
 .chatSpace__chat
   .chat__firstLine
-    %p.chat__userName hoge999
-    %p.chat__sendDate 2019/02/04(Mon) 17:30:43
-  %p.chat__message a
-.chatSpace__chat
-  .chat__firstLine
-    %p.chat__userName hoge999
-    %p.chat__sendDate 2019/02/04(Mon) 17:30:43
-  %p.chat__message b
-.chatSpace__chat
-  .chat__firstLine
-    %p.chat__userName hoge999
-    %p.chat__sendDate 2019/02/04(Mon) 17:30:43
-  %p.chat__message c
+    %p.chat__userName
+      = message.user.name
+    %p.chat__sendDate
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  %p.chat__message
+    = message.body
+  %p.chat__image
+    = image_tag message.image.url if message.image?
