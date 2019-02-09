@@ -12,7 +12,7 @@
             %i.fas.fa-plus-square
   .sideBar__groupSelector
     .groupSelector__groups
-      = render partial: 'grouplist'
+      = render partial: 'grouplist', collection: current_user.groups, as: :group
 .mainView
   .mainView__header
     .header__groupInfo
@@ -26,14 +26,6 @@
     = link_to edit_group_path(@current_group.id), title: 'チャットグループを編集します。' do
       .header__editButton Edit
   .mainView__chatSpace
-    = render partial: 'chat'
+    = render partial: 'chat', collection: @messages, as: :message
   .mainView__chatSender
-    %form.chatSender__form
-      .form__input
-        %input.form__inputBox{placeholder: 'type a message'}
-        %label.form__label
-          %span.form__fileSelectButton
-            %i.fas.fa-images{title: 'アップロードする画像を選択してください。'}
-          %input.form__file{type: 'file'}
-      %input.form__submitButton{type: 'submit', value: 'Send'}
-
+    = render 'form', { message: @message, group: @current_group }
