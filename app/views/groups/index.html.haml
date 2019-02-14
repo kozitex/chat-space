@@ -12,7 +12,8 @@
             %i.fas.fa-plus-square
   .sideBar__groupSelector
     .groupSelector__groups
-      = render partial: 'messages/grouplist'
+      = render partial: 'messages/grouplist', collection: current_user.groups, as: :group
+
 / .mainView
 /   .mainView__header
 /     .header__groupInfo

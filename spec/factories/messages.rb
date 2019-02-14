@@ -2,7 +2,7 @@ include ActionDispatch::TestProcess
 
 FactoryGirl.define do
   factory :message do
-    body  'テスト用のメッセージ内容です'
+    body  Faker::Lorem.sentence
     image File.open("#{Rails.root}/public/uploads/images/image.jpg")
     group
     user
