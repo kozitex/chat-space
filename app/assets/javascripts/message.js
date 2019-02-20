@@ -21,9 +21,9 @@ $(function() {
 
   $(document).on('submit', '.chatSender__form', function(e){
     e.preventDefault();
-    var form = $('.chatSender__form')
+    var form = $('.chatSender__form');
     var formData = new FormData(this);
-    var href = form.attr('action')
+    var href = form.attr('action');
     var method = form.attr('method');
 
     $.ajax({
@@ -38,8 +38,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.mainView__chatSpace').append(html);
-      $('.form__inputBox').val('');
-      $('.form__file').val('');
+      $('.chatSender__form')[0].reset();
       $('.mainView__chatSpace').animate({scrollTop: $('.mainView__chatSpace')[0].scrollHeight}, 'fast');
     })
 
