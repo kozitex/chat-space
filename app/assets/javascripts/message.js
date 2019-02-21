@@ -22,35 +22,37 @@ $(function() {
 
   function autoUpdate() {
     var url = window.location.href;
-    if ( $('.chat__id:last').data('id') ) {
-      var latest_mid = $('.chat__id:last').data('id');
-    } else {
-      var latest_mid = 0;
-    }
+    if (url.match('messages')) {
+      if ( $('.chat__id:last').data('id') ) {
+        var latest_mid = $('.chat__id:last').data('id');
+      } else {
+        var latest_mid = 0;
+      }
 
-    $.ajax({
-      url: url,
-      dataType: 'json',
-      type: 'GET'
-    })
+      $.ajax({
+        url: url,
+        dataType: 'json',
+        type: 'GET'
+      })
 
-    .done(function(messages) {
-      var new_messages = $.grep(messages,
-        function(message, i) {
-          return(message.id > latest_mid);
-        }
-      );
-      if (new_messages.length !== 0) {
-        new_messages.forEach(function(message) {
-          var html = buildHTML(message);
-          $('.mainView__chatSpace').append(html);
-        });
-      };
-    })
+      .done(function(messages) {
+        var new_messages = $.grep(messages,
+          function(message, i) {
+            return(message.id > latest_mid);
+          }
+        );
+        if (new_messages.length !== 0) {
+          new_messages.forEach(function(message) {
+            var html = buildHTML(message);
+            $('.mainView__chatSpace').append(html);
+          });
+        };
+      })
 
-    .fail(function() {
-      alert('Error!');
-    });
+      .fail(function() {
+        alert('Error!');
+      });
+    };
   };
 
   setInterval(autoUpdate, 5000);
