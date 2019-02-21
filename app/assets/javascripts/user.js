@@ -21,12 +21,13 @@ $(function() {
 
   $('.chat-group-form__input').on('keyup', function() {
     var input = $(this).val();
+    var g_id = $('.group_id').data('id');
 
     $.ajax({
       url: '/users',
       type: 'GET',
       dataType: 'json',
-      data: { keyword: input }
+      data: { keyword: input, group_id: g_id }
     })
 
     .done(function(users) {

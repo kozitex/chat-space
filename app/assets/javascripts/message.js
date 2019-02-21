@@ -74,6 +74,7 @@ $(function() {
     })
 
     .done(function(data) {
+      console.log(data);
       var html = buildHTML(data);
       $('.mainView__chatSpace').append(html);
       $('.chatSender__form')[0].reset();
@@ -81,7 +82,7 @@ $(function() {
     })
 
     .fail(function() {
-      alert('error!');
+      alert('メッセージを入力するか、画像を選択してください');
     })
 
     .always(function() {

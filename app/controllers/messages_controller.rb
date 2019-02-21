@@ -17,10 +17,6 @@ class MessagesController < ApplicationController
         format.html { redirect_to group_messages_path(@current_group), notice: 'メッセージが送信されました。' }
         format.json
       end
-    else
-      set_messages
-      flash.now[:alert] = 'メッセージを入力するか、画像をアップロードしてください。'
-      render :index, object: @current_group
     end
   end
 

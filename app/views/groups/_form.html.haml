@@ -6,7 +6,8 @@
         %ul
           - group.errors.full_messages.each do |message|
             %li
-              =message
+              = message
+  .group_id{data:{id: group.id }}
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :name, 'グループ名', class: 'chat-group-form__label'
@@ -25,6 +26,17 @@
       %label.chat-group-form__label チャットメンバー
     .chat-group-form__field--right
       #chat-group-users
+        .chat-group-user.clearfix.js-chat-member#chat-group-user-8
+          %input{ name: 'group[user_ids][]', type: 'hidden', value: current_user.id }
+          %P.chat-group-user__name
+            = current_user.name
+      - @users.each do |user|
+        .chat-group-user.clearfix.js-chat-member#chat-group-user-8
+          %input{ name: 'group[user_ids][]', type: 'hidden', value: user.id }
+          %P.chat-group-user__name
+            = user.name
+          %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+            削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
