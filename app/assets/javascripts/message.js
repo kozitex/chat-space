@@ -15,9 +15,45 @@ $(function() {
                   </div>
                   <p class="chat__message">${message.body}</p>
                   <p class="chat__image">` + img_tag + `</p>
+                  <div class="chat__id" data-id="${message.id}"></div>
                 </div>`;
     return html;
   }
+
+  function autoUpdate() {
+    var url = window.location.href;
+    if ( $('.chat__id:last').data('id') ) {
+      var latest_mid = $('.chat__id:last').data('id');
+    } else {
+      var latest_mid = 0;
+    }
+
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      type: 'GET'
+    })
+
+    .done(function(messages) {
+      var new_messages = $.grep(messages,
+        function(message, i) {
+          return(message.id > latest_mid);
+        }
+      );
+      if (new_messages.length !== 0) {
+        new_messages.forEach(function(message) {
+          var html = buildHTML(message);
+          $('.mainView__chatSpace').append(html);
+        });
+      };
+    })
+
+    .fail(function() {
+      alert('Error!');
+    });
+  };
+
+  setInterval(autoUpdate, 5000);
 
   $(document).on('submit', '.chatSender__form', function(e){
     e.preventDefault();
