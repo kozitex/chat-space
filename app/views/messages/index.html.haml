@@ -6,10 +6,10 @@
       %ul.userInfo__menu
         %li<
           = link_to edit_user_path(current_user), title: 'ユーザー情報を編集します。' do
-            %i.fas.fa-user-edit
+            %i.fa.fa-edit
         %li<
           = link_to new_group_path, title: 'チャットグループを新規作成します。' do
-            %i.fas.fa-plus-square
+            %i.fa.fa-cog
   .sideBar__groupSelector
     .groupSelector__groups
       = render partial: 'grouplist', collection: current_user.groups, as: :group

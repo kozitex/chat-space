@@ -58,7 +58,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails', '~> 1.0'
 gem 'erb2haml'
-gem 'font-awesome-sass', '~> 5.4.1'
+gem 'font-awesome-rails'
+# gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
