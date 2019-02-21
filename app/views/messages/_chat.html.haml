@@ -8,3 +8,4 @@
     = message.body
   %p.chat__image
     = image_tag message.image.url if message.image?
+  .chat__id{ data: { id: message.id } }
