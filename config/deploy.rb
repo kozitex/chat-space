@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "chat-space"
-set :repo_url, "git@github.com:kozitex/chat-sapce.git"
+set :repo_url, "git@github.com:kozitex/chat-space.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
