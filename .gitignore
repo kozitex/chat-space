@@ -16,4 +16,5 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-public/uploads/*
+public/uploads/message/*
+public/uploads/tmp/*
