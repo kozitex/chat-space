@@ -4,7 +4,7 @@
     = image_tag message.image.url if message.image?
     = f.label :image, class: 'form__label' do
       %span.form__fileSelectButton
-        %i.fas.fa-images{title: 'アップロードする画像を選択してください。'}
+        %i.fa.fa-image{title: 'アップロードする画像を選択してください。'}
       = f.file_field :image, class: 'form__file'
       = f.hidden_field :image_cache
   = f.submit 'Send', class: 'form__submitButton'
