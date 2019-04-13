@@ -18,4 +18,4 @@
 
 public/uploads/message/*
 public/uploads/tmp/*
-config/secrets.yml
+# config/secrets.yml
