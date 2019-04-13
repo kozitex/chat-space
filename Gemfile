@@ -74,3 +74,7 @@ gem 'fog-aws'
 group :production do
   gem 'unicorn'
 end
+
+group :production do
+  gem 'pg'
+end
